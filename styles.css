@@ -1,0 +1,333 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+color: #f1f5f9;
+min-height: 100vh;
+padding: clamp(1.0000rem, 1.6666667vw, 2.5000rem);
+}
+
+.container {
+max-width: clamp(600.000px, 62.5000000vw, 1500.000px);
+margin: 0 auto;
+}
+
+header {
+text-align: center;
+margin-bottom: clamp(1.5000rem, 2.5000000vw, 3.7500rem);
+padding-bottom: clamp(1.0000rem, 1.6666667vw, 2.5000rem);
+border-bottom: clamp(1.000px, 0.1041667vw, 2.500px) solid #334155;
+}
+
+h1 {
+font-size: clamp(1.4000rem, 2.3333333vw, 3.5000rem);
+background: linear-gradient(90deg, #60a5fa, #38bdf8, #22d3ee);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-bottom: clamp(0.5000rem, 0.8333333vw, 1.2500rem);
+}
+
+.tagline {
+color: #94a3b8;
+font-size: clamp(0.6000rem, 1.0000000vw, 1.5000rem);
+max-width: clamp(300.000px, 31.2500000vw, 750.000px);
+margin: 0 auto;
+}
+
+.tabs {
+display: flex;
+gap: clamp(2.500px, 0.2604167vw, 6.250px);
+margin-bottom: clamp(1.0000rem, 1.6666667vw, 2.5000rem);
+background: #1e293b;
+border-radius: clamp(6.000px, 0.6250000vw, 15.000px);
+padding: clamp(2.500px, 0.2604167vw, 6.250px);
+flex-wrap: wrap;
+}
+
+.tab-btn {
+flex: 1;
+min-width: clamp(60.000px, 6.2500000vw, 150.000px);
+padding: clamp(6.000px, 0.6250000vw, 15.000px) clamp(10.000px, 1.0416667vw, 25.000px);
+background: transparent;
+border: none;
+border-radius: clamp(4.000px, 0.4166667vw, 10.000px);
+color: #cbd5e1;
+cursor: pointer;
+font-weight: 600;
+transition: all 0.3s;
+text-align: center;
+}
+
+.tab-btn.active {
+background: #3b82f6;
+color: white;
+box-shadow: 0 clamp(2.000px, 0.2083333vw, 5.000px) clamp(6.000px, 0.6250000vw, 15.000px) rgba(59, 130, 246, 0.3);
+}
+
+.tab-content {
+display: none;
+background: rgba(30, 41, 59, 0.8);
+border-radius: clamp(8.000px, 0.8333333vw, 20.000px);
+padding: clamp(1.2500rem, 2.0833333vw, 3.1250rem);
+margin-bottom: clamp(1.0000rem, 1.6666667vw, 2.5000rem);
+border: clamp(0.500px, 0.0520833vw, 1.250px) solid #475569;
+backdrop-filter: blur(clamp(5.000px, 0.5208333vw, 12.500px));
+}
+
+.tab-content.active {
+display: block;
+animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(clamp(5.000px, 0.5208333vw, 12.500px)); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.panel-title {
+color: #38bdf8;
+margin-bottom: clamp(0.7500rem, 1.2500000vw, 1.8750rem);
+font-size: clamp(0.7500rem, 1.2500000vw, 1.8750rem);
+display: flex;
+align-items: center;
+gap: clamp(5.000px, 0.5208333vw, 12.500px);
+}
+
+.input-group {
+margin-bottom: clamp(0.9000rem, 1.5000000vw, 2.2500rem);
+}
+
+label {
+display: block;
+margin-bottom: clamp(0.4000rem, 0.6666667vw, 1.0000rem);
+color: #7dd3fc;
+font-weight: 600;
+font-size: clamp(0.4750rem, 0.7916667vw, 1.1875rem);
+}
+
+input, textarea, select {
+width: 100%;
+padding: clamp(7.000px, 0.7291667vw, 17.500px) clamp(9.000px, 0.9375000vw, 22.500px);
+background: #0f172a;
+border: clamp(1.000px, 0.1041667vw, 2.500px) solid #475569;
+border-radius: clamp(5.000px, 0.5208333vw, 12.500px);
+color: #f8fafc;
+font-size: clamp(0.5000rem, 0.8333333vw, 1.2500rem);
+transition: all 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+outline: none;
+border-color: #60a5fa;
+box-shadow: 0 0 0 clamp(1.500px, 0.1562500vw, 3.750px) rgba(96, 165, 250, 0.1);
+}
+
+textarea {
+min-height: clamp(100.000px, 10.4166667vw, 250.000px);
+font-family: 'JetBrains Mono', 'Cascadia Code', 'Courier New', monospace;
+resize: vertical;
+line-height: 1.6;
+}
+
+.file-upload {
+position: relative;
+border: clamp(1.500px, 0.1562500vw, 3.750px) dashed #475569;
+border-radius: clamp(6.000px, 0.6250000vw, 15.000px);
+padding: clamp(1.5000rem, 2.5000000vw, 3.7500rem) clamp(1.0000rem, 1.6666667vw, 2.5000rem);
+text-align: center;
+cursor: pointer;
+transition: all 0.3s;
+background: rgba(15, 23, 42, 0.5);
+}
+
+.file-upload:hover {
+border-color: #60a5fa;
+background: rgba(96, 165, 250, 0.05);
+}
+
+.file-upload.dragover {
+border-color: #22c55e;
+background: rgba(34, 197, 94, 0.1);
+}
+
+.upload-icon {
+font-size: clamp(1.5000rem, 2.5000000vw, 3.7500rem);
+margin-bottom: clamp(0.5000rem, 0.8333333vw, 1.2500rem);
+color: #60a5fa;
+}
+
+.file-name {
+margin-top: clamp(0.5000rem, 0.8333333vw, 1.2500rem);
+color: #94a3b8;
+font-size: clamp(0.4500rem, 0.7500000vw, 1.1250rem);
+word-break: break-all;
+}
+
+.config-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(clamp(125.000px, 13.0208333vw, 312.500px), 1fr));
+gap: clamp(0.7500rem, 1.2500000vw, 1.8750rem);
+margin: clamp(1.0000rem, 1.6666667vw, 2.5000rem) 0;
+background: rgba(15, 23, 42, 0.5);
+padding: clamp(0.7500rem, 1.2500000vw, 1.8750rem);
+border-radius: clamp(6.000px, 0.6250000vw, 15.000px);
+border: clamp(0.500px, 0.0520833vw, 1.250px) solid #334155;
+}
+
+.config-item {
+display: flex;
+flex-direction: column;
+gap: clamp(4.000px, 0.4166667vw, 10.000px);
+}
+
+.buttons {
+display: flex;
+gap: clamp(0.5000rem, 0.8333333vw, 1.2500rem);
+margin-top: clamp(1.2500rem, 2.0833333vw, 3.1250rem);
+flex-wrap: wrap;
+}
+
+button {
+padding: clamp(8.000px, 0.8333333vw, 20.000px) clamp(14.000px, 1.4583333vw, 35.000px);
+border: none;
+border-radius: clamp(5.000px, 0.5208333vw, 12.500px);
+font-size: clamp(0.5000rem, 0.8333333vw, 1.2500rem);
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: clamp(5.000px, 0.5208333vw, 12.500px);
+min-width: clamp(80.000px, 8.3333333vw, 200.000px);
+}
+
+.primary-btn {
+background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+color: white;
+flex: 2;
+}
+
+.primary-btn:hover {
+background: linear-gradient(135deg, #1d4ed8, #1e40af);
+transform: translateY(-clamp(1.000px, 0.1041667vw, 2.500px));
+box-shadow: 0 clamp(4.000px, 0.4166667vw, 10.000px) clamp(10.000px, 1.0416667vw, 25.000px) rgba(59, 130, 246, 0.3);
+}
+
+.secondary-btn {
+background: linear-gradient(135deg, #10b981, #059669);
+color: white;
+flex: 1;
+}
+
+.secondary-btn:hover {
+background: linear-gradient(135deg, #059669, #047857);
+transform: translateY(-clamp(1.000px, 0.1041667vw, 2.500px));
+}
+
+.download-btn {
+background: linear-gradient(135deg, #f59e0b, #d97706);
+color: white;
+}
+
+.download-btn:hover {
+background: linear-gradient(135deg, #d97706, #b45309);
+transform: translateY(-clamp(1.000px, 0.1041667vw, 2.500px));
+}
+
+.result-container {
+margin-top: clamp(1.5000rem, 2.5000000vw, 3.7500rem);
+animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+from { opacity: 0; transform: translateY(clamp(10.000px, 1.0416667vw, 25.000px)); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.result-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: clamp(0.5000rem, 0.8333333vw, 1.2500rem);
+}
+
+.result-code {
+background: #0f172a;
+border-radius: clamp(6.000px, 0.6250000vw, 15.000px);
+padding: clamp(0.7500rem, 1.2500000vw, 1.8750rem);
+font-family: 'JetBrains Mono', 'Cascadia Code', 'Courier New', monospace;
+font-size: clamp(0.4750rem, 0.7916667vw, 1.1875rem);
+color: #7dd3fc;
+max-height: clamp(250.000px, 26.0416667vw, 625.000px);
+overflow-y: auto;
+border: clamp(0.500px, 0.0520833vw, 1.250px) solid #334155;
+line-height: 1.6;
+}
+
+.stats {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(clamp(75.000px, 7.8125000vw, 187.500px), 1fr));
+gap: clamp(0.5000rem, 0.8333333vw, 1.2500rem);
+margin-top: clamp(1.0000rem, 1.6666667vw, 2.5000rem);
+}
+
+.stat-card {
+background: rgba(30, 41, 59, 0.8);
+padding: clamp(0.6000rem, 1.0000000vw, 1.5000rem);
+border-radius: clamp(5.000px, 0.5208333vw, 12.500px);
+text-align: center;
+border: clamp(0.500px, 0.0520833vw, 1.250px) solid #475569;
+}
+
+.stat-value {
+font-size: clamp(1.0000rem, 1.6666667vw, 2.5000rem);
+font-weight: bold;
+color: #60a5fa;
+margin-bottom: clamp(0.2500rem, 0.4166667vw, 0.6250rem);
+}
+
+.stat-label {
+color: #94a3b8;
+font-size: clamp(0.4500rem, 0.7500000vw, 1.1250rem);
+}
+
+footer {
+margin-top: clamp(2.0000rem, 3.3333333vw, 5.0000rem);
+text-align: center;
+color: #64748b;
+font-size: clamp(0.4500rem, 0.7500000vw, 1.1250rem);
+padding-top: clamp(1.0000rem, 1.6666667vw, 2.5000rem);
+border-top: clamp(0.500px, 0.0520833vw, 1.250px) solid #334155;
+}
+
+@media (max-width: clamp(384.000px, 40.0000000vw, 960.000px)) {
+body {
+    padding: clamp(0.5000rem, 0.8333333vw, 1.2500rem);
+}
+
+h1 {
+    font-size: clamp(1.1000rem, 1.8333333vw, 2.7500rem);
+}
+
+.tab-content {
+    padding: clamp(0.7500rem, 1.2500000vw, 1.8750rem);
+}
+
+.buttons {
+    flex-direction: column;
+}
+
+button {
+    width: 100%;
+}
+
+.config-grid {
+    grid-template-columns: 1fr;
+}
+}
