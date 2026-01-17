@@ -18,6 +18,5 @@ Herramienta web para convertir valores CSS a la función clamp() automáticament
 3. **Pegar CSS**: Copia y pega tu código en el área de texto
 4. Haz clic en "Convertir CSS"
 5. Copia o descarga el resultado
-git clone https://github.com/tu-usuario/clamp-calculator.git
 cd clamp-calculator
 # Abre index.html en tu navegador
